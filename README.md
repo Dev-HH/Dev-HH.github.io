@@ -78,3 +78,7 @@ https://sangmin2ya.github.io/studylog/hydejack/HJ1/
 # Sticky TOC 구현
 
 https://james1verse27.github.io/blog/2023-02-22-github/
+
+# Git Pre, Post 구현
+
+git hook을 사용하여 \_config.yml 파일의 theme:부분 주석 처리 및 해제 구현
