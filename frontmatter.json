@@ -1,0 +1,89 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "previewPath": null,
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Last modified date",
+          "name": "lastmod",
+          "type": "datetime",
+          "isModifiedDate": true
+        },
+        {
+          "title": "Navigation weight",
+          "name": "weight",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "Post",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "required": true,
+          "title": "Layout",
+          "name": "layout",
+          "type": "string",
+          "default": "post",
+          "hidden": true
+        },
+        {
+          "required": true,
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "default": "New Post"
+        },
+        {
+          "required": false,
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "required": false,
+          "title": "Related Posts",
+          "name": "related_posts",
+          "type": "list",
+          "default": []
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "jekyll",
+  "frontMatter.content.publicFolder": "assets",
+  "frontMatter.preview.host": "http://localhost:4000",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "memoir",
+      "path": "[[workspace]]/blog/memoir/_posts"
+    },
+    {
+      "title": "tech",
+      "path": "[[workspace]]/blog/tech/_posts"
+    }
+  ],
+  "frontMatter.git.enabled": true
+}
