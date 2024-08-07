@@ -70,3 +70,11 @@ Jekyll은 정적 사이트 생성기(Static Site Generator)로, 블로그나 웹
     optional_front_matter, readme_index, relative_links, titles_from_headings, compress_html: 각각의 플러그인에 대한 설정을 지정합니다.
 16. Jekyll Compose 기본값 설정
     jekyll_compose: 포스트, 프로젝트 등의 기본 front matter 설정을 지정합니다.
+
+# Sub Menu 구현
+
+https://sangmin2ya.github.io/studylog/hydejack/HJ1/
+
+# Sticky TOC 구현
+
+https://james1verse27.github.io/blog/2023-02-22-github/
