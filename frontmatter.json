@@ -3,8 +3,8 @@
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
-      "previewPath": null,
       "pageBundle": false,
+      "previewPath": null,
       "fields": [
         {
           "title": "Title",
@@ -24,50 +24,24 @@
           "isPublishDate": true
         },
         {
-          "title": "Last modified date",
-          "name": "lastmod",
-          "type": "datetime",
-          "isModifiedDate": true
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
         },
         {
-          "title": "Navigation weight",
-          "name": "weight",
-          "type": "number"
-        }
-      ]
-    },
-    {
-      "name": "Post",
-      "pageBundle": false,
-      "previewPath": null,
-      "fields": [
-        {
-          "required": true,
-          "title": "Layout",
-          "name": "layout",
-          "type": "string",
-          "default": "post",
-          "hidden": true
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
         },
         {
-          "required": true,
-          "title": "Title",
-          "name": "title",
-          "type": "string",
-          "default": "New Post"
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
         },
         {
-          "required": false,
-          "title": "Description",
-          "name": "description",
-          "type": "string"
-        },
-        {
-          "required": false,
-          "title": "Related Posts",
-          "name": "related_posts",
-          "type": "list",
-          "default": []
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
         }
       ]
     }
@@ -75,14 +49,56 @@
   "frontMatter.framework.id": "jekyll",
   "frontMatter.content.publicFolder": "assets",
   "frontMatter.preview.host": "http://localhost:4000",
-  "frontMatter.content.pageFolders": [
+  "frontMatter.projects": [
     {
-      "title": "memoir",
-      "path": "[[workspace]]/blog/memoir/_posts"
+      "name": "tech drafed",
+      "default": true,
+      "configuration": {
+        "frontMatter.content.pageFolders": [
+          {
+            "title": "tech",
+            "path": "[[workspace]]/post/tech/_drafts"
+          }
+        ],
+        "frontMatter.preview.pathName": "/post/tech/"
+      }
     },
     {
-      "title": "tech",
-      "path": "[[workspace]]/blog/tech/_posts"
+      "name": "tech published",
+      "default": true,
+      "configuration": {
+        "frontMatter.content.pageFolders": [
+          {
+            "title": "tech",
+            "path": "[[workspace]]/post/tech/_posts"
+          }
+        ],
+        "frontMatter.preview.pathName": "/post/tech/"
+      }
+    },
+    {
+      "name": "memoir drafed",
+      "configuration": {
+        "frontMatter.content.pageFolders": [
+          {
+            "title": "memoir",
+            "path": "[[workspace]]/post/memoir/_drafts"
+          }
+        ],
+        "frontMatter.preview.pathName": "/post/memoir/"
+      }
+    },
+    {
+      "name": "memoir published",
+      "configuration": {
+        "frontMatter.content.pageFolders": [
+          {
+            "title": "memoir",
+            "path": "[[workspace]]/post/memoir/_posts"
+          }
+        ],
+        "frontMatter.preview.pathName": "/post/memoir/"
+      }
     }
   ],
   "frontMatter.git.enabled": true

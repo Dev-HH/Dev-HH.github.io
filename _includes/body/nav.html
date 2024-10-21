@@ -1,7 +1,7 @@
-<span class="sr-only"
-  >{{ site.data.strings.navigation | default:"Navigation" }}{{
-  site.data.strings.colon | default:":" }}</span
->
+<span class="sr-only">
+  {{ site.data.strings.navigation | default:"Navigation" }}
+  {{site.data.strings.colon | default:":" }}
+</span>
 <ul>
   {% if site.menu %} {% for node in site.menu %} {% assign url = node.url |
   default: node.href %} {% assign count = count | plus: 1 %}
@@ -10,7 +10,7 @@
       {% if node.submenu %}
       <button class="spread-btn" onclick="javascript:spread({{count}})">
         <span id="spread-icon-{{count}}" class="material-icons"
-          >arrow_right</span
+          >arrow_drop_down</span
         >
       </button>
       {% endif %}
@@ -37,7 +37,7 @@
     </div>
     {% if node.submenu %}
     <div class="menu-wrapper">
-      <input type="checkbox" id="folder-checkbox-{{count}}" />
+      <input type="checkbox" id="folder-checkbox-{{count}}" checked />
       <ul>
         {% for subnode in node.submenu %}
         <li>

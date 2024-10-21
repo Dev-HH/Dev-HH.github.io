@@ -1,0 +1,26 @@
+{%- assign active_tag = include.active_tag -%} {%- assign is_list_page =
+include.is_list_page -%} {%- assign tags = include.tags -%} {%- assign meta =
+include.meta -%} {%- assign start_with = include.start_with -%} {%- assign
+separator = include.separator -%} {%- assign end_with = include.end_with -%} {%-
+assign content = '' -%} {%- if is_list_page == true -%} {%- assign tags = tags |
+where_exp: 'tag', 'tag != active_tag' -%} {%- assign start_with = "<span
+  >" | append: start_with | append: "</span
+>" -%} {%- assign separator = "<span>" | append: separator | append: "</span>"
+-%} {%- assign end_with = "<span>" | append: end_with | append: "</span>" -%}
+{%- endif -%} {%- if tags.size > 0 -%} {%- assign content = start_with -%} {%-
+for tag_slug in tags -%} {%- capture iter_separator -%}{% if forloop.last %}{{
+end_with }}{% else %}{{ separator }}{% endif %}{%- endcapture -%} {%- if major
+>= 4 and minor >= 1 %} {%- assign tag = meta | find: "slug", tag_slug -%} {%-
+else -%} {%- assign tag = meta | where: "slug", tag_slug | first -%} {%- endif
+-%} {%- if tag -%} {%- capture content_temp -%}{{ content }}<a
+  href="{{ tag.url | relative_url }}"
+  class="flip-title"
+  >{{ tag.title }}</a
+>{{ iter_separator }}{%- endcapture -%} {%- else -%} {%- capture content_temp
+-%}{{ content }}<span>{{ tag_slug | capitalize }}</span>{{ iter_separator }}{%-
+endcapture -%} {%- endif -%} {%- assign content = content_temp -%} {%- endfor
+-%} {%- endif -%} {%- if is_list_page == true and content != '' -%}
+<section class="faded fine" style="display: inline">
+  {{ content | strip }}
+</section>
+{%- else -%} {{ content }} {%- endif -%}
